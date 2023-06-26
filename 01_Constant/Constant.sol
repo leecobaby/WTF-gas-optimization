@@ -12,3 +12,8 @@ contract Immutable {
 contract Public {
     uint256 public variable = 1000;
 }
+
+contract Empty {
+    function empty() public view {}
+    function empty2() public view {}
+}

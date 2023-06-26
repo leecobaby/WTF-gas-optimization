@@ -8,11 +8,13 @@ contract ConstantTest is Test {
     Constant public constantContract;
     Immutable public immutableContract;
     Public public publicContract;
+    Empty public emptyContract;
 
     function setUp() public {
         constantContract = new Constant();
         immutableContract = new Immutable();
         publicContract = new Public();
+        emptyContract = new Empty();
     }
 
     function testConstant() public view {
@@ -25,5 +27,9 @@ contract ConstantTest is Test {
 
     function testVariable() public view {
         publicContract.variable();
+    }
+
+    function testEmpty() public view {
+        emptyContract.empty();
     }
 }
