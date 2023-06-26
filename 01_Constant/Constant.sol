@@ -14,6 +14,9 @@ contract Public {
 }
 
 contract Empty {
-    function empty() public view {}
+    function empty() public pure {
+        1 + 1;
+    }
+
     function empty2() public view {}
 }
