@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
+
 import "forge-std/Test.sol";
 import "./Uint.sol";
 
@@ -56,5 +57,9 @@ contract UncheckedTest is Test {
 
     function testSetUint256() public {
         uintContract.setUint256(11);
+    }
+
+    function testSetUint256_2() public {
+        uintContract.setUint256(888888888888888888888);
     }
 }
