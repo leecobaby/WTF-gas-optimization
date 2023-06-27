@@ -13,11 +13,11 @@ contract Bitmap {
         implementationWithBitmap = data;
     }
 
-    function readWithBoolArray(uint8 index) external returns (bool) {
+    function readWithBoolArray(uint8 index) external view returns (bool) {
         return implementationWithBool[index];
     }
 
-    function readWithBitmap(uint indexFromRight) external returns (bool) {
+    function readWithBitmap(uint256 indexFromRight) external view returns (bool) {
         uint256 bitAtIndex = implementationWithBitmap & (1 << indexFromRight);
         return bitAtIndex > 0;
     }
