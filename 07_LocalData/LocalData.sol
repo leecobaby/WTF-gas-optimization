@@ -10,6 +10,7 @@ contract LocalData {
         }
     }
 
+    // 这里可以用之前的 unchecked 优化
     function localData(uint times) external {
         uint local_mycounter;
         for (uint i; i < times; i++) {
