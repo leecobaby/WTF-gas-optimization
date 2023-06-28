@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.13;
+
 import "forge-std/Test.sol";
 import "./Clone2.sol";
 
@@ -22,6 +23,7 @@ contract Clone2Test {
         normalFactory.newContract();
     }
 
+    // 在重复部署合约或部署标准的ERC20,ERC721合约时，可以使用clone2来节省gas
     function testClone2Factory() public {
         clone2Factory.clone2Contract(address(wattingDeploy));
     }
