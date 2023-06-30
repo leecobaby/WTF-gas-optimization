@@ -3,22 +3,26 @@ pragma solidity ^0.8.13;
 
 contract Increment {
     function increment() external {
-        uint num;
+        uint256 num;
         num += 1;
     }
 
     function increment2() external {
-        uint num;
+        uint256 num;
         num = num + 1;
     }
 
     function increment3() external {
-        uint num;
+        uint256 num;
         num++;
     }
 
     function increment4() external {
-        uint num;
+        uint256 num;
         ++num;
+    }
+
+    function increment5() external {
+        1 + 1;
     }
 }

@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.13;
+
 import "forge-std/Test.sol";
 import "./Increment.sol";
 
@@ -24,5 +25,9 @@ contract IncrementTest {
 
     function testIncrement4() public {
         increment.increment4();
+    }
+
+    function testIncrement5() public {
+        increment.increment5();
     }
 }
