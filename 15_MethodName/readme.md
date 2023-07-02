@@ -9,12 +9,17 @@ forge test --contracts 15_MethodName/MethodName.t.sol --gas-report
 ```
 
 ## 功能简述
-1. EVM执行交易，calldata数据消耗gas，0字节消耗 4 gas，非0字节消耗 16 gas
-2. calldata前4个字节是MethodId，通过优化函数名增加MethodId中0字节的个数来节省gas
+
+1. EVM 执行交易，calldata 数据消耗 gas，0 字节消耗 4 gas，非 0 字节消耗 16 gas
+2. calldata 前 4 个字节是 MethodId，通过优化函数名增加 MethodId 中 0 字节的个数来节省 gas
 3. [在线函数名优化](https://emn178.github.io/solidity-optimize-name/)
 
+比较有趣的是这个优化算法。
+
 ## DemoCode
-下面分别调用普通函数和MethodId优化后的函数
+
+下面分别调用普通函数和 MethodId 优化后的函数
+
 ```solidity
 contract MethodName {
     function test() external {
@@ -26,7 +31,8 @@ contract MethodNameOpt {
     }
 }
 ```
-| 函数名    | MethodId | gas 消耗 | 节省      | 结果 |
-| -------- | -------- | -------- | -------- | -------- |
-| test  | 0xf8a8fd6d | 5285      |   |   |
-| test_y2K | 0x000073eb | 5266      |  20  |✅ 建议
+
+| 函数名   | MethodId   | gas 消耗 | 节省 | 结果    |
+| -------- | ---------- | -------- | ---- | ------- |
+| test     | 0xf8a8fd6d | 5285     |      |         |
+| test_y2K | 0x000073eb | 5266     | 20   | ✅ 建议 |
