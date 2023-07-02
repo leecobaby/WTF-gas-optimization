@@ -23,6 +23,7 @@ contract Increment {
     }
 
     function increment5() external {
+        // 没有内存操作最省gas
         1 + 1;
     }
 }
